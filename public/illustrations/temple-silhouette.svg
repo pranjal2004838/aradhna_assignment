@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 240" fill="#2D1B4E">
+  <g opacity="0.9">
+    <!-- central shikhara -->
+    <path d="M600 20 L640 120 L560 120 Z" />
+    <rect x="560" y="120" width="80" height="120" />
+    <circle cx="600" cy="14" r="8" />
+    <!-- side towers -->
+    <path d="M470 70 L500 140 L440 140 Z" />
+    <rect x="440" y="140" width="60" height="100" />
+    <path d="M730 70 L760 140 L700 140 Z" />
+    <rect x="700" y="140" width="60" height="100" />
+    <!-- base -->
+    <rect x="380" y="180" width="440" height="60" />
+    <!-- domes left/right -->
+    <path d="M250 200 a70 70 0 0 1 140 0 Z" />
+    <path d="M810 200 a70 70 0 0 1 140 0 Z" />
+    <rect x="120" y="210" width="180" height="30" />
+    <rect x="900" y="210" width="180" height="30" />
+  </g>
+</svg>
