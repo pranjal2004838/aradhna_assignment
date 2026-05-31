@@ -1,26 +1,121 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/*
+  Aradhana — "Cosmic Bhakti" theme.
+  All colors, fonts and gradients live here so every screen looks consistent.
+*/
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* Primary palette */
+  --color-cosmic-indigo: #18122b;
+  --color-temple-maroon: #5b1f2e;
+  --color-saffron-gold: #f4a261;
+  --color-sacred-orange: #e76f51;
+
+  /* Secondary palette */
+  --color-lotus-cream: #fff3e0;
+  --color-muted-sand: #e8cfa9;
+  --color-rose-copper: #b76e79;
+  --color-peacock-teal: #2a9d8f;
+
+  /* Accent palette */
+  --color-divine-gold: #ffd166;
+  --color-mantra-glow: #ffb703;
+  --color-night-purple: #2d1b4e;
+  --color-soft-ash: #f8f1e7;
+
+  /* Fonts (variables are set by next/font in layout.tsx) */
+  --font-heading: var(--font-cinzel);
+  --font-serif: var(--font-cormorant);
+  --font-body: var(--font-inter);
+  --font-deva: var(--font-noto-deva);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root {
+  /* Reusable layered gradients from the blueprint */
+  --gradient-cosmic:
+    radial-gradient(circle at top left, rgba(255, 209, 102, 0.22), transparent 32%),
+    radial-gradient(circle at bottom right, rgba(231, 111, 81, 0.18), transparent 28%),
+    linear-gradient(135deg, #18122b 0%, #2d1b4e 48%, #5b1f2e 100%);
+
+  --gradient-temple-dawn:
+    radial-gradient(circle at 50% 0%, rgba(255, 209, 102, 0.35), transparent 34%),
+    linear-gradient(180deg, #5b1f2e 0%, #e76f51 52%, #fff3e0 100%);
+
+  --gradient-card:
+    linear-gradient(145deg, rgba(255, 243, 224, 0.92), rgba(255, 255, 255, 0.78));
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body), system-ui, sans-serif;
+  color: var(--color-soft-ash);
+  background: var(--color-cosmic-indigo);
+}
+
+/* Devanagari / Hindi text helper — always readable, never tiny */
+.font-deva {
+  font-family: var(--font-deva), serif;
+  line-height: 1.9;
+}
+
+/* Glass card used on cosmic/dark backgrounds */
+.glass-card {
+  background: rgba(255, 243, 224, 0.08);
+  border: 1px solid rgba(255, 209, 102, 0.22);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 18px 40px -22px rgba(0, 0, 0, 0.7);
+}
+
+/* Parchment card used on reading screens */
+.parchment-card {
+  background: var(--gradient-card);
+  border: 1px solid rgba(180, 130, 60, 0.35);
+  box-shadow: 0 16px 36px -20px rgba(91, 31, 46, 0.45);
+  color: #3a2417;
+}
+
+/* Continuous slow rotation for mandala backgrounds */
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.animate-spin-slow {
+  animation: spin-slow 60s linear infinite;
+}
+
+@keyframes spin-slower {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); }
+}
+.animate-spin-slower {
+  animation: spin-slower 90s linear infinite;
+}
+
+/* Gentle floating used for diya / phone mockup */
+@keyframes float-soft {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+.animate-float-soft {
+  animation: float-soft 6s ease-in-out infinite;
+}
+
+/* Hide scrollbars on horizontal carousels */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Accessibility: respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

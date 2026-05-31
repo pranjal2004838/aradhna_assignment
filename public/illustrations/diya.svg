@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+  <!-- flame -->
+  <path d="M60 18 C70 36 70 48 60 58 C50 48 50 36 60 18 Z" fill="#FFD166" />
+  <path d="M60 28 C66 40 66 48 60 56 C54 48 54 40 60 28 Z" fill="#E76F51" />
+  <!-- glow -->
+  <circle cx="60" cy="42" r="34" fill="#FFB703" opacity="0.18" />
+  <!-- lamp body -->
+  <path d="M22 74 C22 92 40 102 60 102 C80 102 98 92 98 74 Z" fill="#B76E79" />
+  <ellipse cx="60" cy="74" rx="38" ry="8" fill="#5B1F2E" />
+</svg>
