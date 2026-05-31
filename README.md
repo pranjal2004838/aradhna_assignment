@@ -9,6 +9,9 @@ It is built to be **simple and easy to read** — every screen and helper is
 plain TypeScript/React with clear names, so the whole codebase can be explained
 line by line in a code review.
 
+> **Demo video:** see [`docs/demo.mp4`](docs/demo.mp4) for a recorded walkthrough
+> of the core flows (jaap, library, Ask Guruji safety, Sankalp, auth).
+
 ---
 
 ## 1. The problem
