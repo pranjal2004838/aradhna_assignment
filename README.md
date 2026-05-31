@@ -1,9 +1,14 @@
 # Aradhana — Your Daily Spiritual Companion
 
-Aradhana is a mobile-first devotional web app. It helps a person turn scattered
-prayers into a calm, steady daily practice: a personalized daily ritual, a jaap
-(mantra repetition) counter, a library of aartis/chalisas/mantras, a safe
-"Ask Guruji" reflection chat, and 7-day "Sankalp" journeys.
+**The Problem:** Maintaining a consistent daily spiritual habit is difficult. Users struggle with disorganized routines, ad-filled websites for reading prayers, and losing track of their mantra counts across the day.
+*(Technical: We faced the challenge of delivering seamless user data persistence and content management without introducing a complex, slow backend or requiring constant network connectivity.)*
+
+**The Solution:** Aradhana provides a calm, unified mobile-first interface for daily devotion, featuring personalized daily rituals, an ad-free content library, and multi-day guided "Sankalp" journeys.
+*(Technical: We solved this by building a fully client-side React/Next.js application that uses browser `localStorage` as a zero-latency database. This ensures instant load times, seamless state hydration, and a highly readable, API-less architecture.)*
+
+**Example:**
+* *Simple terms:* If you are chanting a mantra and using the app's Jaap counter, and you accidentally close our app at 42 taps, opening the app again will instantly resume your count exactly at 42.
+* *Technical terms:* The Jaap counter component binds an `onClick` event to a state update that serializes synchronously to `localStorage`. On initialization, a custom React hook hydrates the UI state directly from the DOM Storage API, circumventing network round-trips entirely.
 
 It is built to be **simple and easy to read** — every screen and helper is
 plain TypeScript/React with clear names, so the whole codebase can be explained
